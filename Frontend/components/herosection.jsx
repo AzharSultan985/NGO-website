@@ -20,6 +20,7 @@ export default function HeroSection() {
       relative
       min-h-screen
       overflow-hidden
+      -top-28
       "
     >
 
@@ -95,7 +96,6 @@ export default function HeroSection() {
         className="
         absolute
         right-20
-        top-32
         hidden
         h-72
         w-72

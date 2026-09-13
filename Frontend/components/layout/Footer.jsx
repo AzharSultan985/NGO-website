@@ -1,10 +1,5 @@
-import {
-  ArrowRight,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-} from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, ArrowRight } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
@@ -12,224 +7,191 @@ const quickLinks = [
   { name: "About Us", path: "/about" },
   { name: "Events", path: "/events" },
   { name: "Gallery", path: "/gallery" },
-  { name: "Videos", path: "/videos" },
-  { name: "Articles", path: "/articles" },
-  { name: "Contact Us", path: "/contact" },
+  { name: "Contact", path: "/contact" },
 ];
 
-const serviceLinks = [
+const workLinks = [
   { name: "Health", path: "/services/health" },
   { name: "Education", path: "/services/education" },
-  { name: "Law & Order", path: "/services/law-order" },
+  { name: "Awareness", path: "/services/law-order" },
 ];
+
+const socialIcons = [FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn];
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-300">
+    <footer className="relative overflow-hidden bg-white pt-20">
 
-      {/* Main Footer */}
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-green-200/30 blur-3xl" />
+      <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-blue-200/30 blur-3xl" />
 
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_0.7fr_0.7fr_1fr]">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          {/* About */}
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
+
+          {/* Brand */}
           <div>
-            <Link to="/" className="inline-flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-sm font-bold text-white">
+            <Link to="/" className="flex items-center gap-3">
+
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-green-600 to-blue-600 font-bold text-white shadow-lg">
                 PLS
               </div>
 
               <div>
-                <h2 className="text-lg font-bold text-white">
+                <h3 className="text-xl font-bold text-gray-900">
                   Punjab Lok Sanjh
-                </h2>
-                <p className="text-xs text-gray-500">
+                </h3>
+
+                <p className="text-sm text-gray-500">
                   Serving Humanity Together
                 </p>
               </div>
+
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-7 text-gray-400">
-              Punjab Lok Sanjh is committed to supporting communities through
-              meaningful initiatives in health, education, and law & order
-              awareness.
+
+            <p className="mt-6 max-w-sm leading-7 text-gray-600">
+              Working with communities through health, education and awareness
+              initiatives to create a stronger and empowered society.
             </p>
 
-            {/* Social Icons */}
-            <div className="mt-6 flex gap-3">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-sm font-bold text-gray-400 transition hover:bg-green-700 hover:text-white"
-              >
-                f
-              </a>
 
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-sm font-bold text-gray-400 transition hover:bg-green-700 hover:text-white"
-              >
-                ig
-              </a>
-
-              <a
-                href="#"
-                aria-label="YouTube"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-sm font-bold text-gray-400 transition hover:bg-green-700 hover:text-white"
-              >
-                ▶
-              </a>
-
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-sm font-bold text-gray-400 transition hover:bg-green-700 hover:text-white"
-              >
-                in
-              </a>
+            <div className="mt-7 flex gap-3">
+              {socialIcons.map((Icon, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-500 shadow-sm transition hover:-translate-y-1 hover:bg-green-600 hover:text-white"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
+
           </div>
+
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h4 className="font-semibold text-gray-900">
               Quick Links
-            </h3>
+            </h4>
 
-            <ul className="mt-5 space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.path}>
+            <ul className="mt-6 space-y-3">
+              {quickLinks.map((item) => (
+                <li key={item.path}>
                   <Link
-                    to={link.path}
-                    className="text-sm text-gray-400 transition hover:text-green-400"
+                    to={item.path}
+                    className="text-sm text-gray-600 transition hover:text-green-600"
                   >
-                    {link.name}
+                    {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services */}
+
+
+          {/* Work */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Our Work
-            </h3>
 
-            <ul className="mt-5 space-y-3">
-              {serviceLinks.map((link) => (
-                <li key={link.path}>
+            <h4 className="font-semibold text-gray-900">
+              Our Work
+            </h4>
+
+            <ul className="mt-6 space-y-3">
+              {workLinks.map((item) => (
+                <li key={item.path}>
                   <Link
-                    to={link.path}
-                    className="text-sm text-gray-400 transition hover:text-green-400"
+                    to={item.path}
+                    className="text-sm text-gray-600 transition hover:text-green-600"
                   >
-                    {link.name}
+                    {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
+
           </div>
+
+
+
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+
+            <h4 className="font-semibold text-gray-900">
               Contact Us
-            </h3>
+            </h4>
 
-            <div className="mt-5 space-y-5">
 
-              <div className="flex gap-3">
-                <MapPin
-                  size={19}
-                  className="mt-0.5 shrink-0 text-green-500"
-                />
+            <div className="mt-6 space-y-5">
 
-                <p className="text-sm leading-6 text-gray-400">
-                  Punjab, Pakistan
-                </p>
+              <div className="flex gap-3 text-sm text-gray-600">
+                <MapPin className="text-green-600" size={20} />
+                Punjab, Pakistan
               </div>
+
 
               <a
                 href="tel:+923001234567"
-                className="flex gap-3 text-sm text-gray-400 transition hover:text-green-400"
+                className="flex gap-3 text-sm text-gray-600 hover:text-green-600"
               >
-                <Phone
-                  size={19}
-                  className="shrink-0 text-green-500"
-                />
-
-                <span>+92 300 1234567</span>
+                <Phone className="text-green-600" size={20} />
+                +92 300 1234567
               </a>
+
 
               <a
                 href="mailto:info@punjabloksanjh.org"
-                className="flex gap-3 text-sm text-gray-400 transition hover:text-green-400"
+                className="flex gap-3 text-sm text-gray-600 hover:text-green-600"
               >
-                <Mail
-                  size={19}
-                  className="shrink-0 text-green-500"
-                />
-
-                <span className="break-all">
-                  info@punjabloksanjh.org
-                </span>
+                <Mail className="text-green-600" size={20} />
+                info@punjabloksanjh.org
               </a>
 
+
               <a
-                href="https://wa.me/923001234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-green-400 transition hover:text-green-300"
+                href="https://wa.me/"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-green-600"
               >
-                <MessageCircle size={19} />
-                Chat on WhatsApp
+                <MessageCircle size={20} />
+                WhatsApp
                 <ArrowRight size={15} />
               </a>
 
             </div>
+
           </div>
+
         </div>
+
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:text-left lg:px-8">
 
-          <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} Punjab Lok Sanjh. All rights reserved.
+
+      {/* Bottom */}
+      <div className="mt-16 border-t border-gray-200">
+
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-center sm:px-6 md:flex-row md:justify-between lg:px-8">
+
+          <p className="text-sm text-gray-500">
+            © {new Date().getFullYear()} Punjab Lok Sanjh. All Rights Reserved.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-5 text-xs sm:justify-end">
-            <Link
-              to="/privacy-policy"
-              className="text-gray-500 transition hover:text-green-400"
-            >
-              Privacy Policy
-            </Link>
 
-            <Link
-              to="/terms-and-conditions"
-              className="text-gray-500 transition hover:text-green-400"
-            >
-              Terms & Conditions
-            </Link>
-          </div>
+          <p className="text-sm text-gray-500">
+            Designed & Developed by{" "}
+            <span className="font-semibold text-green-600">
+              Azhar Sultan
+            </span>
+          </p>
 
         </div>
 
-        {/* Developer Credit */}
-        <div className="border-t border-white/5">
-          <div className="mx-auto max-w-7xl px-4 py-4 text-center sm:px-6 lg:px-8">
-            <p className="text-xs text-gray-600">
-              Powered by{" "}
-              <span className="font-medium text-gray-400">
-                Azhar Sultan
-              </span>
-            </p>
-          </div>
-        </div>
       </div>
+
 
     </footer>
   );

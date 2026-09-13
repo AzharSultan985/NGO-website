@@ -9,11 +9,13 @@ function MainPage() {
   return (
 <>
 
-
 <HeroSection/>
+<div className=''>
+
 <AboutSection/>
 <GallerySection/>
 <CTASection/>
+</div>
 </>
   )
 }

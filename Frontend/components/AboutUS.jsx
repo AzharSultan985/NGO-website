@@ -6,15 +6,7 @@ import { Link } from "react-router-dom";
 export default function AboutSection() {
 
   return (
-
-    <section
-      className="
-      relative
-      overflow-hidden
-      bg-white
-      py-24
-      "
-    >
+<section className="relative overflow-hidden bg-amber-50 py-20">
 
 
       <div
