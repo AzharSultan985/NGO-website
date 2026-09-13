@@ -1,103 +1,504 @@
-import { ArrowRight, Play } from "lucide-react";
-import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Play
+} from "lucide-react";
 
-export default function HeroSection() {
+import {
+  Link
+} from "react-router-dom";
+
+
+import {
+  motion
+} from "framer-motion";
+
+
+import {
+  Canvas
+} from "@react-three/fiber";
+
+
+import {
+  Environment,
+  Float,
+  Sphere
+} from "@react-three/drei";
+
+
+
+function Model() {
+
   return (
-    <section className="relative min-h-[calc(100vh-80px)] overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeEoM4RwgZYfY08doEFwp3yGeeHpfxzr_fhX-uVMWdQ&s=10"
-          alt="Punjab Lok Sanjh community work"
-          className="h-full w-full object-cover"
+
+    <Float
+      speed={2}
+      rotationIntensity={1.5}
+      floatIntensity={2}
+    >
+
+      <Sphere
+        args={[1.8, 64, 64]}
+      >
+
+        <meshStandardMaterial
+          color="#22c55e"
+          roughness={0.2}
+          metalness={0.5}
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20" />
-      </div>
+      </Sphere>
 
-      {/* Content */}
-      <div className="relative mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
 
-          {/* Label */}
-          <div className="mb-6 inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 backdrop-blur-sm">
-            <span className="mr-2 h-2 w-2 rounded-full bg-green-400" />
-            <span className="text-sm font-medium text-white">
+    </Float>
+
+  )
+
+}
+
+
+
+
+export default function HeroSection() {
+
+
+  return (
+
+    <section
+      className="
+relative
+overflow-hidden
+min-h-screen
+bg-gradient-to-br
+from-white
+via-green-50
+to-blue-50
+"
+    >
+
+
+      {/* Decorative Background */}
+
+      <div
+        className="
+absolute
+right-0
+top-20
+h-[500px]
+w-[500px]
+rounded-full
+bg-green-300/20
+blur-3xl
+"
+      />
+
+
+      <div
+        className="
+absolute
+left-0
+bottom-0
+h-[400px]
+w-[400px]
+rounded-full
+bg-blue-300/20
+blur-3xl
+"
+      />
+
+
+
+      <div
+        className="
+relative
+mx-auto
+grid
+max-w-7xl
+items-center
+gap-10
+px-4
+pt-32
+pb-20
+sm:px-6
+lg:grid-cols-2
+lg:px-8
+"
+      >
+
+
+        {/* LEFT CONTENT */}
+
+
+        <motion.div
+
+          initial={{
+            opacity: 0,
+            x: -80
+          }}
+
+          whileInView={{
+            opacity: 1,
+            x: 0
+          }}
+
+          viewport={{
+            once: true
+          }}
+
+          transition={{
+            duration: 0.8
+          }}
+
+        >
+
+
+          <div
+            className="
+inline-flex
+items-center
+rounded-full
+border
+border-green-200
+bg-white
+px-5
+py-2
+shadow-sm
+"
+          >
+
+            <span
+              className="
+mr-2
+h-2
+w-2
+rounded-full
+bg-green-500
+animate-pulse
+"
+            />
+
+            <p
+              className="
+text-sm
+font-medium
+text-gray-700
+"
+            >
               Serving Communities • Creating Impact
-            </span>
+            </p>
+
+
           </div>
 
-          {/* Heading */}
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Together for a
-            <span className="block text-green-400">
-              Better Punjab
+
+
+
+          <h1
+            className="
+mt-8
+text-5xl
+font-bold
+leading-tight
+tracking-tight
+text-gray-900
+sm:text-6xl
+lg:text-7xl
+"
+          >
+
+            Together For
+
+            <span
+              className="
+block
+bg-gradient-to-r
+from-green-600
+to-blue-600
+bg-clip-text
+text-transparent
+"
+            >
+              A Better Punjab
             </span>
+
+
           </h1>
 
-          {/* Description */}
-          <p className="mt-6 max-w-2xl text-base leading-7 text-gray-200 sm:text-lg sm:leading-8">
-            Punjab Lok Sanjh works with communities to promote health,
-            education, and awareness while supporting people in building
-            a stronger and more empowered society.
+
+
+
+          <p
+            className="
+mt-6
+max-w-xl
+text-lg
+leading-8
+text-gray-600
+"
+          >
+
+            Punjab Lok Sanjh works with communities to create
+            positive change through health, education and
+            social awareness initiatives.
+
           </p>
 
-          {/* Buttons */}
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+
+
+
+          <div
+            className="
+mt-8
+flex
+flex-col
+gap-4
+sm:flex-row
+"
+          >
+
+
             <Link
+
               to="/services"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black"
+
+              className="
+flex
+items-center
+justify-center
+gap-2
+rounded-xl
+bg-gradient-to-r
+from-green-600
+to-blue-600
+px-7
+py-4
+font-semibold
+text-white
+shadow-xl
+transition
+hover:scale-105
+"
+
             >
-              Explore Our Work
+
+              Explore Work
+
               <ArrowRight size={18} />
+
             </Link>
+
+
 
             <Link
+
               to="/about"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white hover:text-gray-900"
+
+              className="
+flex
+items-center
+justify-center
+gap-2
+rounded-xl
+border
+border-gray-200
+bg-white
+px-7
+py-4
+font-semibold
+text-gray-800
+shadow-sm
+transition
+hover:shadow-lg
+"
+
             >
+
               <Play size={17} />
+
               Learn More
+
             </Link>
+
+
+
           </div>
 
-          {/* Impact highlights */}
-          <div className="mt-12 grid max-w-xl grid-cols-3 border-t border-white/20 pt-6">
+
+
+
+
+          {/* Stats */}
+
+
+          <div
+            className="
+mt-12
+grid
+grid-cols-3
+border-t
+border-gray-200
+pt-8
+max-w-xl
+"
+          >
+
+
             <div>
-              <p className="text-2xl font-bold text-white sm:text-3xl">
+
+              <h3
+                className="
+text-3xl
+font-bold
+text-gray-900
+"
+              >
                 3+
+              </h3>
+
+              <p
+                className="
+text-sm
+text-gray-500
+"
+              >
+                Areas
               </p>
-              <p className="mt-1 text-xs text-gray-300 sm:text-sm">
-                Areas of Work
-              </p>
+
             </div>
 
-            <div className="border-l border-white/20 pl-4 sm:pl-6">
-              <p className="text-2xl font-bold text-white sm:text-3xl">
+
+
+            <div
+              className="
+border-l
+pl-5
+border-gray-200
+"
+            >
+
+              <h3
+                className="
+text-3xl
+font-bold
+text-gray-900
+"
+              >
                 100+
+              </h3>
+
+              <p
+                className="
+text-sm
+text-gray-500
+"
+              >
+                Programs
               </p>
-              <p className="mt-1 text-xs text-gray-300 sm:text-sm">
-                Community Initiatives
-              </p>
+
             </div>
 
-            <div className="border-l border-white/20 pl-4 sm:pl-6">
-              <p className="text-2xl font-bold text-white sm:text-3xl">
+
+
+
+            <div
+              className="
+border-l
+pl-5
+border-gray-200
+"
+            >
+
+              <h3
+                className="
+text-3xl
+font-bold
+text-gray-900
+"
+              >
                 24/7
+              </h3>
+
+              <p
+                className="
+text-sm
+text-gray-500
+"
+              >
+                Support
               </p>
-              <p className="mt-1 text-xs text-gray-300 sm:text-sm">
-                Commitment
-              </p>
+
+
             </div>
+
+
           </div>
 
-        </div>
+
+        </motion.div>
+
+
+
+
+
+        {/* RIGHT 3D */}
+
+
+        <motion.div
+
+          initial={{
+            opacity: 0,
+            scale: 0.7
+          }}
+
+          whileInView={{
+            opacity: 1,
+            scale: 1
+          }}
+
+          transition={{
+            duration: 1
+          }}
+
+          className="
+h-[500px]
+"
+
+        >
+
+
+          <Canvas
+            camera={{
+              position: [0, 0, 6]
+            }}
+          >
+
+
+            <ambientLight intensity={1} />
+
+            <directionalLight
+              position={[3, 3, 3]}
+              intensity={2}
+            />
+
+
+            <Model />
+
+
+            <Environment preset="city" />
+
+
+          </Canvas>
+
+
+        </motion.div>
+
+
+
       </div>
 
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/10 to-transparent" />
+
+
     </section>
-  );
+
+  )
+
 }
