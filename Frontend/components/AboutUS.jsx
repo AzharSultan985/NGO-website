@@ -61,7 +61,7 @@ export default function About() {
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-gray-300 sm:text-lg sm:leading-8">
               Punjab Lok Sanjh is committed to serving communities through
-              meaningful work in health, education, and law & order awareness.
+              meaningful work    in health, education, and law & order awareness.
             </p>
           </div>
         </div>
