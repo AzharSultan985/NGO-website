@@ -1,201 +1,556 @@
 import {
   ArrowRight,
   Mail,
-  MessageCircle,
   Phone,
+  MessageCircle,
+  
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn
+} from "react-icons/fa";
+import {
+  motion
+} from "framer-motion";
 
-const socialLinks = [
-  {
-    name: "Facebook",
-    href: "#",
-    label: "f",
-  },
-  {
-    name: "Instagram",
-    href: "#",
-    label: "ig",
-  },
-  {
-    name: "YouTube",
-    href: "#",
-    label: "▶",
-  },
-  {
-    name: "LinkedIn",
-    href: "#",
-    label: "in",
-  },
-];
-export default function CTASection() {
-  return (
-    <section className="relative overflow-hidden bg-gray-950">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-green-600/10 blur-3xl" />
-        <div className="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-green-500/10 blur-3xl" />
-      </div>
+import {
+  Link
+} from "react-router-dom";
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
 
-        {/* Main CTA */}
-        <div className="grid items-center gap-12 lg:grid-cols-[1.4fr_0.8fr]">
 
-          {/* Left Content */}
-          <div>
-            <span className="inline-flex items-center rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-green-400">
-              Get Connected
-            </span>
+export default function CTASection(){
 
-            <h2 className="mt-6 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Let's work together to
-              <span className="block text-green-400">
-                create meaningful change.
-              </span>
-            </h2>
 
-            <p className="mt-6 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg">
-              Whether you want to learn more about our work, support a
-              community initiative, or simply connect with us, we would
-              love to hear from you.
-            </p>
+return (
 
-            {/* Primary Actions */}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-green-700"
-              >
-                Contact Us
-                <ArrowRight size={18} />
-              </Link>
+<section
+className="
+relative
+overflow-hidden
+bg-white
+py-24
+"
+>
 
-              <a
-                href="https://wa.me/923001234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-green-500/30 bg-green-500/10 px-6 py-3.5 text-sm font-semibold text-green-400 transition hover:bg-green-500 hover:text-white"
-              >
-                <MessageCircle size={18} />
-                WhatsApp Us
-              </a>
-            </div>
-          </div>
 
-          {/* Right Contact Card */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm sm:p-8">
+{/* Soft Background Effects */}
 
-            <h3 className="text-xl font-semibold text-white">
-              Connect With Us
-            </h3>
+<div
+className="
+absolute
+right-0
+top-10
+h-72
+w-72
+rounded-full
+bg-green-200/40
+blur-3xl
+"
+/>
 
-            <p className="mt-2 text-sm leading-6 text-gray-400">
-              Have a question or want to know more about Punjab Lok Sanjh?
-              Reach out to our team.
-            </p>
 
-            {/* Phone */}
-            <a
-              href="tel:+923001234567"
-              className="mt-7 flex items-center gap-4 rounded-xl p-3 transition hover:bg-white/5"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-400">
-                <Phone size={19} />
-              </span>
+<div
+className="
+absolute
+bottom-0
+left-0
+h-72
+w-72
+rounded-full
+bg-blue-200/30
+blur-3xl
+"
+/>
 
-              <div>
-                <p className="text-xs text-gray-500">
-                  Call Us
-                </p>
-                <p className="mt-1 text-sm font-medium text-gray-200">
-                  +92 300 1234567
-                </p>
-              </div>
-            </a>
 
-            {/* Email */}
-            <a
-              href="mailto:info@punjabloksanjh.org"
-              className="flex items-center gap-4 rounded-xl p-3 transition hover:bg-white/5"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-400">
-                <Mail size={19} />
-              </span>
 
-              <div>
-                <p className="text-xs text-gray-500">
-                  Email Us
-                </p>
-                <p className="mt-1 break-all text-sm font-medium text-gray-200">
-                  info@punjabloksanjh.org
-                </p>
-              </div>
-            </a>
 
-            {/* WhatsApp */}
-            <a
-              href="https://wa.me/923001234567"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 rounded-xl p-3 transition hover:bg-white/5"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-400">
-                <MessageCircle size={19} />
-              </span>
 
-              <div>
-                <p className="text-xs text-gray-500">
-                  WhatsApp
-                </p>
-                <p className="mt-1 text-sm font-medium text-gray-200">
-                  Chat with us
-                </p>
-              </div>
-            </a>
+<div
+className="
+relative
+mx-auto
+max-w-7xl
+px-4
+sm:px-6
+lg:px-8
+"
+>
 
-            {/* Divider */}
-            <div className="my-6 h-px bg-white/10" />
 
-            {/* Social Media */}
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
-                Follow Us
-              </p>
 
-       <div className="mt-4 flex gap-3">
-  {socialLinks.map((social) => (
-    <a
-      key={social.name}
-      href={social.href}
-      aria-label={social.name}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-sm font-bold text-gray-400 transition hover:border-green-500/30 hover:bg-green-500 hover:text-white"
-    >
-      {social.label}
-    </a>
-  ))}
-</div>  
-            </div>
+<motion.div
 
-          </div>
-        </div>
+initial={{
+opacity:0,
+y:60
+}}
 
-        {/* Bottom Trust Line */}
-        <div className="mt-16 border-t border-white/10 pt-6">
-          <div className="flex flex-col justify-between gap-3 text-center text-xs text-gray-500 sm:flex-row sm:text-left">
-            <p>
-              Punjab Lok Sanjh — Serving communities with purpose.
-            </p>
+whileInView={{
+opacity:1,
+y:0
+}}
 
-            <p>
-              Health • Education • Law & Order
-            </p>
-          </div>
-        </div>
+viewport={{
+once:true
+}}
 
-      </div>
-    </section>
-  );
+transition={{
+duration:.8
+}}
+
+
+className="
+relative
+overflow-hidden
+rounded-[35px]
+border
+border-gray-200
+bg-white/70
+p-8
+shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+backdrop-blur-xl
+sm:p-12
+"
+
+
+>
+
+
+
+{/* Floating Circle */}
+
+<motion.div
+
+animate={{
+rotate:360
+}}
+
+transition={{
+duration:20,
+repeat:Infinity,
+ease:"linear"
+}}
+
+className="
+absolute
+right-10
+top-10
+h-20
+w-20
+rounded-full
+border
+border-green-200
+"
+/>
+
+
+
+
+<div
+className="
+grid
+gap-12
+lg:grid-cols-2
+lg:items-center
+"
+>
+
+
+
+
+
+{/* Content */}
+
+
+<div>
+
+
+<p
+className="
+text-sm
+font-semibold
+uppercase
+tracking-[0.3em]
+text-green-600
+"
+>
+Get Involved
+</p>
+
+
+
+
+<h2
+className="
+mt-5
+text-4xl
+font-bold
+leading-tight
+text-gray-900
+sm:text-5xl
+"
+>
+
+Together We Can
+Create Real Change
+
+</h2>
+
+
+
+<p
+className="
+mt-5
+max-w-xl
+text-lg
+leading-8
+text-gray-600
+"
+>
+
+Your support helps us continue our work
+with communities and create meaningful
+impact where it matters most.
+
+</p>
+
+
+
+
+<Link
+
+to="/contact"
+
+className="
+mt-8
+inline-flex
+items-center
+gap-2
+rounded-xl
+bg-green-600
+px-7
+py-3.5
+font-semibold
+text-white
+transition
+hover:bg-green-700
+hover:scale-105
+"
+
+>
+
+Contact Us
+
+<ArrowRight size={18}/>
+
+</Link>
+
+
+</div>
+
+
+
+
+
+
+
+{/* Contact Cards */}
+
+
+
+<div
+className="
+grid
+gap-4
+sm:grid-cols-2
+"
+>
+
+
+
+
+<a
+href="#"
+className="
+group
+rounded-2xl
+border
+border-gray-200
+bg-white
+p-5
+transition
+hover:-translate-y-2
+hover:shadow-xl
+"
+>
+
+<Phone
+className="
+text-green-600
+"
+size={26}
+/>
+
+
+<h4
+className="
+mt-3
+font-semibold
+text-gray-900
+"
+>
+Call Us
+</h4>
+
+
+<p
+className="
+text-sm
+text-gray-500
+"
+>
++92 XXX XXXXXXX
+</p>
+
+
+</a>
+
+
+
+
+
+<a
+
+href="https://wa.me/"
+
+className="
+group
+rounded-2xl
+border
+border-gray-200
+bg-white
+p-5
+transition
+hover:-translate-y-2
+hover:shadow-xl
+"
+
+>
+
+
+<MessageCircle
+className="
+text-green-600
+"
+size={26}
+/>
+
+
+<h4
+className="
+mt-3
+font-semibold
+text-gray-900
+"
+>
+WhatsApp
+</h4>
+
+
+<p
+className="
+text-sm
+text-gray-500
+"
+>
+Chat With Us
+</p>
+
+
+</a>
+
+
+
+
+
+
+<a
+
+href="#"
+
+className="
+rounded-2xl
+border
+border-gray-200
+bg-white
+p-5
+transition
+hover:-translate-y-2
+hover:shadow-xl
+"
+
+>
+
+
+<Mail
+className="
+text-blue-600
+"
+size={26}
+/>
+
+
+<h4
+className="
+mt-3
+font-semibold
+text-gray-900
+"
+>
+Email
+</h4>
+
+
+<p
+className="
+text-sm
+text-gray-500
+"
+>
+info@example.com
+</p>
+
+
+</a>
+
+
+
+
+
+
+
+<div
+
+className="
+rounded-2xl
+border
+border-gray-200
+bg-white
+p-5
+"
+
+>
+
+
+<h4
+className="
+font-semibold
+text-gray-900
+"
+>
+Follow Us
+</h4>
+
+
+
+<div
+className="
+mt-4
+flex
+gap-3
+"
+>
+
+
+<a
+className="
+flex
+h-10
+w-10
+items-center
+justify-center
+rounded-full
+bg-gray-100
+transition
+hover:bg-green-600
+hover:text-white
+"
+>
+
+<FaFacebookF size={18}/>
+
+</a>
+
+
+
+<a
+className="
+flex
+h-10
+w-10
+items-center
+justify-center
+rounded-full
+bg-gray-100
+transition
+hover:bg-green-600
+hover:text-white
+"
+>
+
+<FaInstagram size={18}/>
+
+</a>
+
+
+
+<a
+className="
+flex
+h-10
+w-10
+items-center
+justify-center
+rounded-full
+bg-gray-100
+transition
+hover:bg-green-600
+hover:text-white
+"
+>
+
+<FaLinkedinIn size={18}/>
+
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</motion.div>
+
+
+</div>
+
+
+</section>
+
+)
+
 }
